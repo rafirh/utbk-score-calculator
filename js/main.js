@@ -1,20 +1,46 @@
+const inputNames = ['kpu_input', 'kku_input', 'ppu_input', 'kmm_input', 'lbind_input', 'lbing_input', 'pm_input'];
+
 const countBtn = document.getElementById('count-btn');
 countBtn.addEventListener('click', countUtbkAverageScore);
 
-const inputNames = ['kpu_input', 'kku_input', 'ppu_input', 'kmm_input', 'lbind_input', 'lbing_input', 'pm_input'];
-
 function countUtbkAverageScore() {
     const inputValues = getInputValues(inputNames);
+    const method = document.querySelector('input[name=method]:checked').value;
 
-    const tpsAverage = calculateAverage([
+    let result = 0;
+    if (method == 'first') {
+        result = firtsMethod(inputValues);
+    } else if (method == 'second') {
+        result = secondMethod(inputValues);
+    }
+
+    setResult(result);
+}
+
+function firtsMethod(inputValues) {
+    const result = calculateAverage([
         inputValues.kpu_input, 
         inputValues.kku_input, 
         inputValues.ppu_input, 
+        inputValues.kmm_input,
+        inputValues.lbind_input, 
+        inputValues.lbing_input,
+        inputValues.pm_input
+    ]);
+
+    return roundToTwo(result);
+}
+
+function secondMethod(inputValues) {
+    const tpsAverage = calculateAverage([
+        inputValues.kpu_input,
+        inputValues.kku_input,
+        inputValues.ppu_input,
         inputValues.kmm_input
     ]);
 
     const literacyAverage = calculateAverage([
-        inputValues.lbind_input, 
+        inputValues.lbind_input,
         inputValues.lbing_input,
     ]);
 
@@ -24,13 +50,13 @@ function countUtbkAverageScore() {
         inputValues.pm_input
     ]);
 
-    setResult(roundToTwo(result));
+    return roundToTwo(result);
 }
 
 function getInputValues(names) {
     let values = {};
     names.forEach(name => {
-        const value = document.getElementById(name).value || 0;
+        const value = document.querySelector(`input[name=${name}]`).value || 0;
         values[name] = parseInt(value);
     });
     return values;

@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Kalkulator Rata-rata Skor UTBK</title>
-    <meta name="description" content="Aplikasi kalkulator untuk menghitung rata-rata UTBK. Dengan aplikasi ini, kamu bisa menghitung rata-rata skor UTBK kamu.">
-    <meta name="keywords" content="kalkulator, UTBK, rata-rata, ujian, masuk perguruan tinggi, cara mnghiturng skor utbk, cara melihat skor utbk, skor utbk 2023, sertfikat UTBK, cek nilai utbk, cara melihat skor UTBK 2023, nilai UTBK">
-    <meta name="author" content="Muhmmad Rafi Rahman Habibi">
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <meta
+      name="description"
+      content="Aplikasi kalkulator untuk menghitung rata-rata UTBK. Dengan aplikasi ini, kamu bisa menghitung rata-rata skor UTBK kamu."
+    />
+    <meta
+      name="keywords"
+      content="kalkulator, UTBK, rata-rata, ujian, masuk perguruan tinggi, cara mnghiturng skor utbk, cara melihat skor utbk, skor utbk 2023, sertfikat UTBK, cek nilai utbk, cara melihat skor UTBK 2023, nilai UTBK"
+    />
+    <meta name="author" content="Muhmmad Rafi Rahman Habibi" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link href="./css/tabler.min.css?1674944402" rel="stylesheet" />
     <link href="./css/tabler-flags.min.css?1674944402" rel="stylesheet" />
     <link href="./css/tabler-payments.min.css?1674944402" rel="stylesheet" />
@@ -34,16 +40,14 @@
         </div>
         <div class="card card-md">
           <div class="card-body">
-            <h2 class="h2 text-center mb-4">
-              Kalkulator Rata-rata Skor UTBK
-            </h2>
+            <h2 class="h2 text-center mb-4">Kalkulator Rata-rata Skor UTBK</h2>
             <div class="mb-3">
               <label class="form-label">Kemampuan Penalaran Umum</label>
               <input
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai kemampuan penalaran umum"
-                id="kpu_input"
+                name="kpu_input"
               />
             </div>
             <div class="mb-3">
@@ -52,7 +56,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai kemampuan kuantitatif"
-                id="kku_input"
+                name="kku_input"
               />
             </div>
             <div class="mb-3">
@@ -61,7 +65,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai pengetahuan dan pemahaman umum"
-                id="ppu_input"
+                name="ppu_input"
               />
             </div>
             <div class="mb-3">
@@ -70,7 +74,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai kemampuan memahami bacaan dan menulis"
-                id="kmm_input"
+                name="kmm_input"
               />
             </div>
             <div class="mb-3">
@@ -79,7 +83,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai literasi bahasa indonesia"
-                id="lbind_input"
+                name="lbind_input"
               />
             </div>
             <div class="mb-3">
@@ -88,7 +92,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai literasi bahasa inggris"
-                id="lbing_input"
+                name="lbing_input"
               />
             </div>
             <div class="mb-2">
@@ -97,15 +101,44 @@
                 type="number"
                 class="form-control"
                 placeholder="Masukkan nilai penalaran matematika"
-                id="pm_input"
+                name="pm_input"
               />
             </div>
-            <span class="text-muted fs-5">
-              *Gunakan titik (.) untuk bilangan desimal
-            </span>
+            <div class="text-muted fs-5 mb-3">*Gunakan titik (.) untuk bilangan desimal</div>
+            <div class="text-center">
+              <div class="form-selectgroup form-selectgroup-pills">
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="method" value="first" class="form-selectgroup-input" checked />
+                  <span class="form-selectgroup-label">Cara 1</span>
+                </label>
+                <label class="form-selectgroup-item">
+                  <input type="radio" name="method" value="second" class="form-selectgroup-input" />
+                  <span class="form-selectgroup-label">Cara 2</span>
+                </label>
+              </div>
+              <span
+                class="form-help ms-1"
+                data-bs-toggle="popover"
+                data-bs-placement="top"
+                data-bs-content="<p>Cara 1: Menjumlahkan semua skor kemudian dibagi dengan 7.</p><p>Cara 2: Menjumlahkan rata-rata skor masing-masing sub tes kemudian dibagi dengan 3.</p>"
+                data-bs-html="true"
+                aria-describedby="popover429923"
+                >?</span>
+            </div>
             <div class="form-footer">
               <button id="count-btn" class="btn btn-primary w-100">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calculator" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-calculator"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M4 3m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                   <path d="M8 7m0 1a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1z"></path>
@@ -128,7 +161,7 @@
           </div>
         </div>
         <div class="text-center text-muted mt-3">
-          v1.0.0 - Made with <span class="text-danger">❤</span> by 
+          v1.1.0 - Made with <span class="text-danger">❤</span> by
           <a href="https://www.instagram.com/rqfir/" target="_blank" class="text-decoration-none">Rafi Rahman</a>
         </div>
       </div>

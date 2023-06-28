@@ -78,3 +78,28 @@ function setResult(value) {
 function roundToTwo(num) {    
     return +(Math.round(num + "e+2")  + "e-2");
 }
+
+$(document).ready(function() {
+    hitCounterApi();
+});
+
+function hitCounterApi() {
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/counter?id=utbk_counter&hit=true',
+        headers: { 'X-Api-Key': 'iPTYWm3teu+VtIp8w0YyNA==3ycdOWOsF1vM3sCU'},
+        contentType: 'application/json',
+        success: function(result) {
+            setVisitorCounter(result.value);
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+}
+
+function setVisitorCounter(value) {
+    const counter = document.getElementById('visitor-counter');
+    counter.innerHTML = value;
+}
+

@@ -86,7 +86,7 @@ $(document).ready(function() {
 function hitCounterApi() {
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/counter?id=utbk_counter&hit=true',
+        url: 'https://api.api-ninjas.com/v1/counter?id=asdn8823jjas&hit=true',
         headers: { 'X-Api-Key': 'iPTYWm3teu+VtIp8w0YyNA==3ycdOWOsF1vM3sCU'},
         contentType: 'application/json',
         success: function(result) {

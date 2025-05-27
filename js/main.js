@@ -85,6 +85,10 @@ $(document).ready(function() {
     // setTimeout(function() {
     //     $('#ads-modal').modal('show');
     // }, 1000);
+
+    setTimeout(function() {
+        $('#sawer-modal').modal('show');
+    }, 1000);
 });
 
 function hitCounterApi() {

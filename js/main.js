@@ -92,7 +92,7 @@ $(document).ready(function() {
 
     setInterval(function() {
         $('#sawer-modal').modal('show');
-    }, 30000);
+    }, 60000);
 });
 
 function hitCounterApi() {
